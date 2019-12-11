@@ -101,7 +101,7 @@ This makes it possible to configure a project with different file layouts; for
 example, either the `drupal/drupal` file layout or the
 `drupal-composer/drupal-project` file layout could be used to set up a project.
 
-If a web-root is not explicitly defined, then it will default to `./`.
+If a web-root is not explicitly defined, then it will default to `.`.
 
 ### Altering Scaffold Files
 
