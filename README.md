@@ -276,7 +276,7 @@ Examples:
     "append": "assets/robots-append.txt"
   },
   "[web-root]/.htaccess": {
-    "mode": "skip",
+    "mode": "skip"
   }
 }
 ```
@@ -417,7 +417,7 @@ Sample composer.json for drupal/core, with assets placed in a different project:
   "extra": {
     "drupal-scaffold": {
       "allowed-packages": [
-        "drupal/assets",
+        "drupal/assets"
       ]
     }
   }
@@ -477,7 +477,7 @@ Append to robots.txt:
     "drupal-scaffold": {
       "file-mapping": {
         "[web-root]/robots.txt": {
-          "append": "assets/my-robots-additions.txt",
+          "append": "assets/my-robots-additions.txt"
         }
       }
     }
