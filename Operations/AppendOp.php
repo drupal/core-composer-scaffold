@@ -3,6 +3,7 @@
 namespace Drupal\Composer\Plugin\Scaffold\Operations;
 
 use Composer\IO\IOInterface;
+use Composer\Util\Filesystem;
 use Drupal\Composer\Plugin\Scaffold\ScaffoldFilePath;
 use Drupal\Composer\Plugin\Scaffold\ScaffoldOptions;
 
@@ -105,6 +106,7 @@ class AppendOp extends AbstractOperation {
    * {@inheritdoc}
    */
   public function process(ScaffoldFilePath $destination, IOInterface $io, ScaffoldOptions $options) {
+    $fs = new Filesystem();
     $destination_path = $destination->fullPath();
     $interpolator = $destination->getInterpolator();
 
@@ -133,6 +135,7 @@ class AppendOp extends AbstractOperation {
     }
 
     // Write the resulting data
+    $fs->ensureDirectoryExists(dirname($destination_path));
     file_put_contents($destination_path, $this->contents());
 
     // Return a ScaffoldResult with knowledge of whether this file is managed.
